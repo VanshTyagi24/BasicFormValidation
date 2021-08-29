@@ -1,0 +1,64 @@
+/*Vansh Tyagi 
+ Student Number: 991604000 */
+body{
+	background-color: rgb(230, 230, 150);
+ display: grid;
+ width: 98%;
+ grid-template-area: ;
+                       
+					  
+ }
+ form {
+border: 1px solid black; padding: 1em;
+display: grid;
+grid-template-areas: 'hdr hdr'
+                     'per exp'
+                     'fin cmt'
+                     'last last'
+					 'val val';
+ }
+		input[type=text], input[type=email],   { background-color: lightgray; }
+		input[type=number] { background-color: lightblue; }
+		input:valid { background-color:rgb(215, 236, 171); }
+		input:invalid { outline-color: rgb(231, 159, 159); background-color: lightsalmon;}
+		input:out-of-range { background-color: rgb(235, 84, 84); }
+		.red { color: red; }	
+		.blue { color: blue; }
+
+  h1{ 
+       text-align: center;
+	   grid-area: hdr;
+	   font-family:"Josefin Sans",Sans-serif; font-size: 30px;
+  }
+ .per{
+	 border: solid;
+	 grid-area: per;
+   width: 100%;
+   text-align: center;
+ }
+ .exp{border: solid;
+	  grid-area: exp;
+   width: 100%;
+   text-align: center;
+ }
+ .fin{ 
+ border: solid ;
+	   grid-area: fin;
+   width: 100%;
+   text-align: center;
+ }
+ .cmt{ border: solid;
+	  grid-area: cmt;
+   width: 100%;
+   text-align: center;
+ }
+ .last{border: solid;
+	 grid-area: last;
+   width: 100%;
+   text-align: center;
+ }
+ .val{
+	  grid-area: val;
+   width: 100%;
+   text-align: center;
+ }

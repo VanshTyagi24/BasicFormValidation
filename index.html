@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<!--Vansh Tyagi -->
+<!-- Student Number: 991604000 -->
+
+<html>
+<head>
+	<title>Vansh Tyagi</title>
+	<meta charset='utf-8'>
+	<link href="CSS/style.css" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<form name='f1' action='get' onsubmit='return checkAll();'>
+	<h1 class="hdr">Assignment 3 By Vansh Tyagi (Student number: 991604000)</h1>
+	<section class="per">
+	<h3>Personal Details</h3>
+	<p><label for='id1'>Last Name (Input 1): </label>
+	<input id='id1' type='text' value="Tyagi" required autofocus >
+	</p>
+	<p><label for='id2'>First Name (Input 2): </label>
+	<input id='id2' type='text' value="Vansh" required>
+					</p>
+	<p><label for='id3'>Student Number (Input 3): </label>
+	<input id='id3' type='number' value='991604000' 
+					required></p>
+	<p><label for='id4'>Email (Input 4)</label>
+	<input id='id4' type='email' value='tyagiva@sheridancollege.ca' required></p>
+	</section>
+	<br>
+	<section class="exp"><h3>Sheridan Experience</h3>
+	<p><label for='id5'>Date (when you started at Sheridan)(Input 5): </label>
+	<input id='id5' type='date' required  >
+	</p>
+	<p><label for='id6'>Previous years of post-secondary experience (Input 6): </label>
+	<input id='id6' type='number'  required></p>
+	<fieldset>
+  <legend>
+    Campus
+  </legend>
+  <p> Davis Campus <input type="radio" name="campus" checked></p>
+  <p> Trafalgar Campus <input type="radio" name="campus"></p>
+  <p> HMC Campus <input type="radio" name="campus"></p>
+  </fieldset>
+	</section>
+	<br>
+<section class="fin"><h3>Financial Data</h3>
+   <p><label for='id7'>Amount of money Received (Input 7): </label>
+	<input id='id7' type='number' value="0" required></p>
+	
+	<fieldset>
+   <legend>Money Source</legend>
+   <div class="checkbox-group required">
+   <p>Scholarship <input type="checkbox" name="source"></p>
+   <p>RESP <input type="checkbox" name="source"></p>
+   <p>Bursary <input type="checkbox" name="source"></p>
+   <p>OSAP <input type="checkbox" name="source"></p>
+   </div>
+   </fieldset>
+ </section> 
+ <section class="cmt">
+ 
+<h3>Comments</h3>
+  <textarea rows="5" cols="55" name="comment" placeholder="Leave your comments">
+  </textarea><br>
+</section>
+	<section class="last">	
+	<p><button onclick='checkAll()'>Submit</button>
+	<button type='reset'>Reset</button></p>
+	</section>
+	<br><br>
+	<section class="val">
+	<span class='red'><b>Error Message:</b></span>
+	<p id='output' style='border: solid 1px black; padding: 5px 0 10px 10px; '></p>
+    </section>
+	</form>
+	
+    
+	<script>
+	
+	function checkAll() {
+		var i=0;											
+		console.clear();									
+		document.getElementById('output').innerHTML='';		
+
+		for (var x=1; x<8; x++) {			
+		
+			var input = document.getElementById('id'+x);	
+			console.dir(input.labels[0].outerText);
+			if (!input.checkValidity()) {					
+				console.dir(input);						
+				document.getElementById('output').innerHTML+='<span class="red">Input '+x+' - '+input.validationMessage+'</span><br>';
+                console.log('Input '+x+' - validationMessage: \n'+input.validationMessage);
+				console.dir(input.validity);				
+				console.dir('---------------------------');
+			} else {										
+				i+=1;									
+				
+				document.getElementById('output').innerHTML+= '<span class="blue">Input '+x+' - Input Valid</span><br>';
+				
+				console.log('Input '+x+' - validationMessage: \n'+input.validationMessage);
+				console.log(input.validationMessage);
+				console.log(input.willValidate);
+				console.dir(input.validity);				
+				console.dir('---------------------------');
+			}
+			if (i===7) {									
+				
+				document.getElementById('output').innerHTML= 'All inputs are Good!!!';
+				console.clear();							
+			}
+		}
+		return false;											
+	}
+	
+
+	</script>
+
+	</body>
+</html>
+
